@@ -1,0 +1,15 @@
+trait_name,trait_type,fuzzy_name
+Diet.Inv,F,Diet
+Diet.Vert,F,Diet
+Diet.Fish,F,Diet
+Diet.Scav,F,Diet
+Diet.Fruit,F,Diet
+Diet.Nect,F,Diet
+Diet.Seed,F,Diet
+Diet.Herb,F,Diet
+ForStrat.aquatic,F,ForStrat
+ForStrat.ground,F,ForStrat
+ForStrat.understory,F,ForStrat
+ForStrat.canopy,F,ForStrat
+ForStrat.aerial,F,ForStrat
+LogBodyMass,Q,NA
