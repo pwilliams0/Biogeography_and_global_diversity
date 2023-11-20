@@ -88,7 +88,7 @@ start <- Sys.time()
 fspaces_quality_mamm <- mFD::quality.fspaces(
   sp_dist             = sp_dist_mamm,
   maxdim_pcoa         = 5,
-  deviation_weighting = c("absolute", "squarred"),
+  deviation_weighting = c("absolute", "squared"),
   fdendro             = "average")
 Sys.time() - start # [5.8 minutes]
 

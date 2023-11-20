@@ -92,7 +92,7 @@ start <- Sys.time()
 fspaces_quality_bird <- mFD::quality.fspaces(
   sp_dist             = sp_dist_bird,
   maxdim_pcoa         = 5,
-  deviation_weighting = c("absolute", "squarred"),
+  deviation_weighting = c("absolute", "squared"),
   fdendro             = "average")
 Sys.time() - start # [45.2 minutes]
 

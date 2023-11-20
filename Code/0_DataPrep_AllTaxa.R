@@ -667,7 +667,7 @@ elton_bird <- read.csv(file="Data/Raw/BirdFuncDat.csv", header=TRUE,
                                ForStrat.midhigh),
          LogBodyMass = log10(BodyMass.Value)) %>%
   ungroup() %>%
-  dplyr::select(names_elton, BLFamilyLatin,
+  dplyr::select(names_elton, BLFamilyLatin, IOCOrder,
                 Diet.Inv, Diet.Vert, Diet.Fish, Diet.Scav,
                 Diet.Fruit, Diet.Nect, Diet.Seed, Diet.Herb,
                 ForStrat.aquatic,
@@ -763,7 +763,8 @@ elton_mamm <- read.table(file="Data/Raw/MamFuncDat.txt", sep="\t", header=TRUE,
 # mamm_names_cells.csv creating by manual matching species names
 mamm_traits <- read.csv(file="Data/Raw/mamm_names_cells.csv", header=TRUE,
                         stringsAsFactors=FALSE) %>%
-  left_join(elton_mamm, by="names_elton")
+  left_join(elton_mamm, by="names_elton") %>%
+  dplyr::select(-diff_IUCN_elton, -diff_IUCN_phylo)
 
 # Get traits of each species in each grid cell
 mamm_cell_df <- enframe(readRDS("Data/mamm_list_cell.RDS"),

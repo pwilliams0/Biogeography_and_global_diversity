@@ -20,25 +20,25 @@ mamm_traits <- read.csv("Data/mamm_cell_df.csv") %>%
 
 # View correlation of traits and axes to interpret functional axes
 mamm_axes <- mFD::traits.faxes.cor(
-  sp_tr          = mamm_traits[,7:11], 
+  sp_tr          = mamm_traits[,6:10], 
   sp_faxes_coord = mamm_func_PCoA[ , c("PC1", "PC4")], 
   plot           = TRUE)
 View(mamm_axes$tr_faxes_stat)
 mamm_axes$tr_faxes_plot
 mamm_axes <- mFD::traits.faxes.cor(
-  sp_tr          = mamm_traits[,12:16],
+  sp_tr          = mamm_traits[,11:15],
   sp_faxes_coord = mamm_func_PCoA[ , c("PC1", "PC4")], 
   plot           = TRUE)
 View(mamm_axes$tr_faxes_stat)
 mamm_axes$tr_faxes_plot
 mamm_axes <- mFD::traits.faxes.cor(
-  sp_tr          = mamm_traits[,7:12], 
+  sp_tr          = mamm_traits[,6:10], 
   sp_faxes_coord = mamm_func_PCoA[ , c("PC2", "PC3")], 
   plot           = TRUE)
 View(mamm_axes$tr_faxes_stat)
 mamm_axes$tr_faxes_plot
 mamm_axes <- mFD::traits.faxes.cor(
-  sp_tr          = mamm_traits[,13:16],
+  sp_tr          = mamm_traits[,11:15],
   sp_faxes_coord = mamm_func_PCoA[ , c("PC2", "PC3")], 
   plot           = TRUE)
 View(mamm_axes$tr_faxes_stat)
@@ -100,13 +100,13 @@ bat_traits <- read.csv("Data/bat_cell_df.csv") %>%
 
 # View correlation of traits and axes to interpret functional axes
 bat_axes <- mFD::traits.faxes.cor(
-  sp_tr          = bat_traits[,c(8:10,13)], 
+  sp_tr          = bat_traits[,c(6:8,10:11)], 
   sp_faxes_coord = bat_func_PCoA[ , c("PC1", "PC2", "PC3")], 
   plot           = TRUE)
 View(bat_axes$tr_faxes_stat)
 bat_axes$tr_faxes_plot
 bat_axes <- mFD::traits.faxes.cor(
-  sp_tr          = bat_traits[,14:17],
+  sp_tr          = bat_traits[,12:15],
   sp_faxes_coord = bat_func_PCoA[ , c("PC1", "PC2", "PC3")], 
   plot           = TRUE)
 View(bat_axes$tr_faxes_stat)

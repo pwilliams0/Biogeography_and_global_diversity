@@ -315,7 +315,6 @@ ggplot(pb_plot) +
 dev.off()
 
 # ----- SCREE PLOTS ----------
-
 # ---------- Birds (Extended Data Fig. 5a) ----------
 
 # Load phylobetadiversity turnover distance matrix
