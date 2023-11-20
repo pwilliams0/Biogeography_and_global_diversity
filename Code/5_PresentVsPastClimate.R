@@ -73,9 +73,9 @@ SR_env_MidHol <- lm(SR ~ log(Landmass_area) +
                       clim_pca_4 + I(clim_pca_4^2),
                     data=data_MidHol,
                     na.action = na.fail)
-summary(SR_env_Present)$r.squared
-summary(SR_env_LGM)$r.squared
-summary(SR_env_MidHol)$r.squared
+summary(SR_env_Present)$adj.r.squared
+summary(SR_env_LGM)$adj.r.squared
+summary(SR_env_MidHol)$adj.r.squared
 
 # Run model for each climate, environment and phylobetadiversity
 SR_all_Present <- lm(SR ~ log(Landmass_area) +
@@ -114,9 +114,9 @@ SR_all_MidHol <- lm(SR ~ log(Landmass_area) +
                       MDS1:MDS2 + MDS1:MDS3 + MDS2:MDS3,
                     data=data_MidHol,
                     na.action = na.fail)
-summary(SR_all_Present)$r.squared
-summary(SR_all_LGM)$r.squared
-summary(SR_all_MidHol)$r.squared
+summary(SR_all_Present)$adj.r.squared
+summary(SR_all_LGM)$adj.r.squared
+summary(SR_all_MidHol)$adj.r.squared
 
 # ---------- Functional richness ----------
 
@@ -156,9 +156,9 @@ FR_env_MidHol <- lm(FR ~ log(Landmass_area) +
                       clim_pca_4 + I(clim_pca_4^2),
                     data=data_MidHol,
                     na.action = na.fail)
-summary(FR_env_Present)$r.squared
-summary(FR_env_LGM)$r.squared
-summary(FR_env_MidHol)$r.squared
+summary(FR_env_Present)$adj.r.squared
+summary(FR_env_LGM)$adj.r.squared
+summary(FR_env_MidHol)$adj.r.squared
 
 # Run model for each climate, environment and phylobetadiversity
 FR_all_Present <- lm(FR ~ log(Landmass_area) +
@@ -197,9 +197,9 @@ FR_all_MidHol <- lm(FR ~ log(Landmass_area) +
                       MDS1:MDS2 + MDS1:MDS3 + MDS2:MDS3,
                     data=data_MidHol,
                     na.action = na.fail)
-summary(FR_all_Present)$r.squared
-summary(FR_all_LGM)$r.squared
-summary(FR_all_MidHol)$r.squared
+summary(FR_all_Present)$adj.r.squared
+summary(FR_all_LGM)$adj.r.squared
+summary(FR_all_MidHol)$adj.r.squared
 
 # ----- MAMMALS  ----------
 
@@ -267,9 +267,9 @@ SR_env_MidHol <- lm(SR ~ log(Landmass_area) +
                       clim_pca_4 + I(clim_pca_4^2),
                     data=data_MidHol,
                     na.action = na.fail)
-summary(SR_env_Present)$r.squared
-summary(SR_env_LGM)$r.squared
-summary(SR_env_MidHol)$r.squared
+summary(SR_env_Present)$adj.r.squared
+summary(SR_env_LGM)$adj.r.squared
+summary(SR_env_MidHol)$adj.r.squared
 
 # Run model for each climate, environment and phylobetadiversity
 SR_all_Present <- lm(SR ~ log(Landmass_area) +
@@ -308,9 +308,9 @@ SR_all_MidHol <- lm(SR ~ log(Landmass_area) +
                    MDS1:MDS2 + MDS1:MDS3 + MDS2:MDS3,
                  data=data_MidHol,
                  na.action = na.fail)
-summary(SR_all_Present)$r.squared
-summary(SR_all_LGM)$r.squared
-summary(SR_all_MidHol)$r.squared
+summary(SR_all_Present)$adj.r.squared
+summary(SR_all_LGM)$adj.r.squared
+summary(SR_all_MidHol)$adj.r.squared
 
 # ---------- Functional richness ----------
 
@@ -350,9 +350,9 @@ FR_env_MidHol <- lm(FR ~ log(Landmass_area) +
                       clim_pca_4 + I(clim_pca_4^2),
                     data=data_MidHol,
                     na.action = na.fail)
-summary(FR_env_Present)$r.squared
-summary(FR_env_LGM)$r.squared
-summary(FR_env_MidHol)$r.squared
+summary(FR_env_Present)$adj.r.squared
+summary(FR_env_LGM)$adj.r.squared
+summary(FR_env_MidHol)$adj.r.squared
 
 # Run model for each climate, environment and phylobetadiversity
 FR_all_Present <- lm(FR ~ log(Landmass_area) +
@@ -391,6 +391,6 @@ FR_all_MidHol <- lm(FR ~ log(Landmass_area) +
                       MDS1:MDS2 + MDS1:MDS3 + MDS2:MDS3,
                     data=data_MidHol,
                     na.action = na.fail)
-summary(FR_all_Present)$r.squared
-summary(FR_all_LGM)$r.squared
-summary(FR_all_MidHol)$r.squared
+summary(FR_all_Present)$adj.r.squared
+summary(FR_all_LGM)$adj.r.squared
+summary(FR_all_MidHol)$adj.r.squared

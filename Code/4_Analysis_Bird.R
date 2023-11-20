@@ -69,9 +69,9 @@ SR_pb <- lm(SR ~ MDS1 + I(MDS1^2) + MDS2 +
             data=data,
             na.action = na.fail)
 # Save R2 of each model
-R2_all <- summary(SR_all)$r.squared
-R2_env <- summary(SR_env)$r.squared
-R2_pb <- summary(SR_pb)$r.squared
+R2_all <- summary(SR_all)$adj.r.squared
+R2_env <- summary(SR_env)$adj.r.squared
+R2_pb <- summary(SR_pb)$adj.r.squared
 # Phylobetadiversity only
 R2_pb_only <- R2_all - R2_env
 # Environment only
@@ -153,9 +153,9 @@ PD_pb <- lm(PD ~ MDS1 + I(MDS1^2) + MDS2 +
             data=data,
             na.action = na.fail)
 # Save R2 of each model
-R2_all <- summary(PD_all)$r.squared
-R2_env <- summary(PD_env)$r.squared
-R2_pb <- summary(PD_pb)$r.squared
+R2_all <- summary(PD_all)$adj.r.squared
+R2_env <- summary(PD_env)$adj.r.squared
+R2_pb <- summary(PD_pb)$adj.r.squared
 # Phylobetadiversity only
 R2_pb_only <- R2_all - R2_env
 # Environment only
@@ -237,9 +237,9 @@ FR_pb <- lm(FR ~ MDS1 + I(MDS1^2) + MDS2 +
             data=data,
             na.action = na.fail)
 # Save R2 of each model
-R2_all <- summary(FR_all)$r.squared
-R2_env <- summary(FR_env)$r.squared
-R2_pb <- summary(FR_pb)$r.squared
+R2_all <- summary(FR_all)$adj.r.squared
+R2_env <- summary(FR_env)$adj.r.squared
+R2_pb <- summary(FR_pb)$adj.r.squared
 # Phylobetadiversity only
 R2_pb_only <- R2_all - R2_env
 # Environment only
@@ -321,9 +321,9 @@ FB_pb <- lm(mean_fb ~ MDS1 + I(MDS1^2) + MDS2 +
             data=data,
             na.action = na.fail)
 # Save R2 of each model
-R2_all <- summary(FB_all)$r.squared
-R2_env <- summary(FB_env)$r.squared
-R2_pb <- summary(FB_pb)$r.squared
+R2_all <- summary(FB_all)$adj.r.squared
+R2_env <- summary(FB_env)$adj.r.squared
+R2_pb <- summary(FB_pb)$adj.r.squared
 # Phylobetadiversity only
 R2_pb_only <- R2_all - R2_env
 # Environment only

@@ -56,7 +56,7 @@ SR_Landmass_area <- lm(SR ~ log(Landmass_area) +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(SR_Landmass_area)$r.squared - summary(SR_clim)$r.squared
+summary(SR_Landmass_area)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Mean elevation
 SR_elev_mean <- lm(SR ~ elev_mean + I(elev_mean^2) +
@@ -66,7 +66,7 @@ SR_elev_mean <- lm(SR ~ elev_mean + I(elev_mean^2) +
                      clim_pca_4 + I(clim_pca_4^2),
                    data=data,
                    na.action = na.fail)
-summary(SR_elev_mean)$r.squared - summary(SR_clim)$r.squared
+summary(SR_elev_mean)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Elevation range
 SR_elev_range <- lm(SR ~ elev_range +
@@ -76,7 +76,7 @@ SR_elev_range <- lm(SR ~ elev_range +
                       clim_pca_4 + I(clim_pca_4^2),
                     data=data,
                     na.action = na.fail)
-summary(SR_elev_range)$r.squared - summary(SR_clim)$r.squared
+summary(SR_elev_range)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Climate distance, present vs. LGM
 SR_clim_diff_LGM <- lm(SR ~ clim_diff_LGM +
@@ -86,7 +86,7 @@ SR_clim_diff_LGM <- lm(SR ~ clim_diff_LGM +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(SR_clim_diff_LGM)$r.squared - summary(SR_clim)$r.squared
+summary(SR_clim_diff_LGM)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Climate distance, present vs. MidHolo
 SR_clim_diff_MidHol <- lm(SR ~ clim_diff_MidHol +
@@ -96,7 +96,7 @@ SR_clim_diff_MidHol <- lm(SR ~ clim_diff_MidHol +
                             clim_pca_4 + I(clim_pca_4^2),
                           data=data,
                           na.action = na.fail)
-summary(SR_clim_diff_MidHol)$r.squared - summary(SR_clim)$r.squared
+summary(SR_clim_diff_MidHol)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Past ice cover
 SR_ice_cover <- lm(SR ~ ice_cover +
@@ -106,7 +106,7 @@ SR_ice_cover <- lm(SR ~ ice_cover +
                      clim_pca_4 + I(clim_pca_4^2),
                    data=data,
                    na.action = na.fail)
-summary(SR_ice_cover)$r.squared - summary(SR_clim)$r.squared
+summary(SR_ice_cover)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Years since significant land conversion
 SR_LandConvYears <- lm(SR ~ LandConvYears +
@@ -116,7 +116,7 @@ SR_LandConvYears <- lm(SR ~ LandConvYears +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(SR_LandConvYears)$r.squared - summary(SR_clim)$r.squared
+summary(SR_LandConvYears)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Human Impact Index
 SR_HII <- lm(SR ~ HII +
@@ -126,7 +126,7 @@ SR_HII <- lm(SR ~ HII +
                clim_pca_4 + I(clim_pca_4^2),
              data=data,
              na.action = na.fail)
-summary(SR_HII)$r.squared - summary(SR_clim)$r.squared
+summary(SR_HII)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # ---------- Functional richness ----------
 
@@ -151,7 +151,7 @@ FR_Landmass_area <- lm(FR ~ log(Landmass_area) +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(FR_Landmass_area)$r.squared - summary(FR_clim)$r.squared
+summary(FR_Landmass_area)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Mean elevation
 FR_elev_mean <- lm(FR ~ elev_mean + I(elev_mean^2) +
@@ -161,7 +161,7 @@ FR_elev_mean <- lm(FR ~ elev_mean + I(elev_mean^2) +
                      clim_pca_4 + I(clim_pca_4^2),
                    data=data,
                    na.action = na.fail)
-summary(FR_elev_mean)$r.squared - summary(FR_clim)$r.squared
+summary(FR_elev_mean)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Elevation range
 FR_elev_range <- lm(FR ~ elev_range +
@@ -171,7 +171,7 @@ FR_elev_range <- lm(FR ~ elev_range +
                       clim_pca_4 + I(clim_pca_4^2),
                     data=data,
                     na.action = na.fail)
-summary(FR_elev_range)$r.squared - summary(FR_clim)$r.squared
+summary(FR_elev_range)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Climate distance, present vs. LGM
 FR_clim_diff_LGM <- lm(FR ~ clim_diff_LGM +
@@ -181,7 +181,7 @@ FR_clim_diff_LGM <- lm(FR ~ clim_diff_LGM +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(FR_clim_diff_LGM)$r.squared - summary(FR_clim)$r.squared
+summary(FR_clim_diff_LGM)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Climate distance, present vs. MidHolo
 FR_clim_diff_MidHol <- lm(FR ~ clim_diff_MidHol +
@@ -191,7 +191,7 @@ FR_clim_diff_MidHol <- lm(FR ~ clim_diff_MidHol +
                             clim_pca_4 + I(clim_pca_4^2),
                           data=data,
                           na.action = na.fail)
-summary(FR_clim_diff_MidHol)$r.squared - summary(FR_clim)$r.squared
+summary(FR_clim_diff_MidHol)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Past ice cover
 FR_ice_cover <- lm(FR ~ ice_cover +
@@ -201,7 +201,7 @@ FR_ice_cover <- lm(FR ~ ice_cover +
                      clim_pca_4 + I(clim_pca_4^2),
                    data=data,
                    na.action = na.fail)
-summary(FR_ice_cover)$r.squared - summary(FR_clim)$r.squared
+summary(FR_ice_cover)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Years since significant land conversion
 FR_LandConvYears <- lm(FR ~ LandConvYears +
@@ -211,7 +211,7 @@ FR_LandConvYears <- lm(FR ~ LandConvYears +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(FR_LandConvYears)$r.squared - summary(FR_clim)$r.squared
+summary(FR_LandConvYears)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Human Impact Index
 FR_HII <- lm(FR ~ HII +
@@ -221,7 +221,7 @@ FR_HII <- lm(FR ~ HII +
                clim_pca_4 + I(clim_pca_4^2),
              data=data,
              na.action = na.fail)
-summary(FR_HII)$r.squared - summary(FR_clim)$r.squared
+summary(FR_HII)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # ----- MAMMALS  ----------
 
@@ -248,7 +248,7 @@ SR_Landmass_area <- lm(SR ~ log(Landmass_area) +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(SR_Landmass_area)$r.squared - summary(SR_clim)$r.squared
+summary(SR_Landmass_area)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Mean elevation
 SR_elev_mean <- lm(SR ~ elev_mean + I(elev_mean^2) +
@@ -258,7 +258,7 @@ SR_elev_mean <- lm(SR ~ elev_mean + I(elev_mean^2) +
                      clim_pca_4 + I(clim_pca_4^2),
                    data=data,
                    na.action = na.fail)
-summary(SR_elev_mean)$r.squared - summary(SR_clim)$r.squared
+summary(SR_elev_mean)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Elevation range
 SR_elev_range <- lm(SR ~ elev_range +
@@ -268,7 +268,7 @@ SR_elev_range <- lm(SR ~ elev_range +
                       clim_pca_4 + I(clim_pca_4^2),
                     data=data,
                     na.action = na.fail)
-summary(SR_elev_range)$r.squared - summary(SR_clim)$r.squared
+summary(SR_elev_range)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Climate distance, present vs. LGM
 SR_clim_diff_LGM <- lm(SR ~ clim_diff_LGM +
@@ -278,7 +278,7 @@ SR_clim_diff_LGM <- lm(SR ~ clim_diff_LGM +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(SR_clim_diff_LGM)$r.squared - summary(SR_clim)$r.squared
+summary(SR_clim_diff_LGM)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Climate distance, present vs. MidHolo
 SR_clim_diff_MidHol <- lm(SR ~ clim_diff_MidHol +
@@ -288,7 +288,7 @@ SR_clim_diff_MidHol <- lm(SR ~ clim_diff_MidHol +
                             clim_pca_4 + I(clim_pca_4^2),
                           data=data,
                           na.action = na.fail)
-summary(SR_clim_diff_MidHol)$r.squared - summary(SR_clim)$r.squared
+summary(SR_clim_diff_MidHol)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Past ice cover
 SR_ice_cover <- lm(SR ~ ice_cover +
@@ -298,7 +298,7 @@ SR_ice_cover <- lm(SR ~ ice_cover +
                      clim_pca_4 + I(clim_pca_4^2),
                    data=data,
                    na.action = na.fail)
-summary(SR_ice_cover)$r.squared - summary(SR_clim)$r.squared
+summary(SR_ice_cover)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Years since significant land conversion
 SR_LandConvYears <- lm(SR ~ LandConvYears +
@@ -308,7 +308,7 @@ SR_LandConvYears <- lm(SR ~ LandConvYears +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(SR_LandConvYears)$r.squared - summary(SR_clim)$r.squared
+summary(SR_LandConvYears)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Human Impact Index
 SR_HII <- lm(SR ~ HII +
@@ -318,7 +318,7 @@ SR_HII <- lm(SR ~ HII +
                clim_pca_4 + I(clim_pca_4^2),
              data=data,
              na.action = na.fail)
-summary(SR_HII)$r.squared - summary(SR_clim)$r.squared
+summary(SR_HII)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # ---------- Functional richness ----------
 
@@ -343,7 +343,7 @@ FR_Landmass_area <- lm(FR ~ log(Landmass_area) +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(FR_Landmass_area)$r.squared - summary(FR_clim)$r.squared
+summary(FR_Landmass_area)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Mean elevation
 FR_elev_mean <- lm(FR ~ elev_mean + I(elev_mean^2) +
@@ -353,7 +353,7 @@ FR_elev_mean <- lm(FR ~ elev_mean + I(elev_mean^2) +
                      clim_pca_4 + I(clim_pca_4^2),
                    data=data,
                    na.action = na.fail)
-summary(FR_elev_mean)$r.squared - summary(FR_clim)$r.squared
+summary(FR_elev_mean)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Elevation range
 FR_elev_range <- lm(FR ~ elev_range +
@@ -363,7 +363,7 @@ FR_elev_range <- lm(FR ~ elev_range +
                       clim_pca_4 + I(clim_pca_4^2),
                     data=data,
                     na.action = na.fail)
-summary(FR_elev_range)$r.squared - summary(FR_clim)$r.squared
+summary(FR_elev_range)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Climate distance, present vs. LGM
 FR_clim_diff_LGM <- lm(FR ~ clim_diff_LGM +
@@ -373,7 +373,7 @@ FR_clim_diff_LGM <- lm(FR ~ clim_diff_LGM +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(FR_clim_diff_LGM)$r.squared - summary(FR_clim)$r.squared
+summary(FR_clim_diff_LGM)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Climate distance, present vs. MidHolo
 FR_clim_diff_MidHol <- lm(FR ~ clim_diff_MidHol +
@@ -383,7 +383,7 @@ FR_clim_diff_MidHol <- lm(FR ~ clim_diff_MidHol +
                             clim_pca_4 + I(clim_pca_4^2),
                           data=data,
                           na.action = na.fail)
-summary(FR_clim_diff_MidHol)$r.squared - summary(FR_clim)$r.squared
+summary(FR_clim_diff_MidHol)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Past ice cover
 FR_ice_cover <- lm(FR ~ ice_cover +
@@ -393,7 +393,7 @@ FR_ice_cover <- lm(FR ~ ice_cover +
                      clim_pca_4 + I(clim_pca_4^2),
                    data=data,
                    na.action = na.fail)
-summary(FR_ice_cover)$r.squared - summary(FR_clim)$r.squared
+summary(FR_ice_cover)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Years since significant land conversion
 FR_LandConvYears <- lm(FR ~ LandConvYears +
@@ -403,7 +403,7 @@ FR_LandConvYears <- lm(FR ~ LandConvYears +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(FR_LandConvYears)$r.squared - summary(FR_clim)$r.squared
+summary(FR_LandConvYears)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Human Impact Index
 FR_HII <- lm(FR ~ HII +
@@ -413,7 +413,7 @@ FR_HII <- lm(FR ~ HII +
                clim_pca_4 + I(clim_pca_4^2),
              data=data,
              na.action = na.fail)
-summary(FR_HII)$r.squared - summary(FR_clim)$r.squared
+summary(FR_HII)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # ----- BATS  ----------
 
@@ -440,7 +440,7 @@ SR_Landmass_area <- lm(SR ~ log(Landmass_area) +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(SR_Landmass_area)$r.squared - summary(SR_clim)$r.squared
+summary(SR_Landmass_area)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Mean elevation
 SR_elev_mean <- lm(SR ~ elev_mean + I(elev_mean^2) +
@@ -450,7 +450,7 @@ SR_elev_mean <- lm(SR ~ elev_mean + I(elev_mean^2) +
                      clim_pca_4 + I(clim_pca_4^2),
                    data=data,
                    na.action = na.fail)
-summary(SR_elev_mean)$r.squared - summary(SR_clim)$r.squared
+summary(SR_elev_mean)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Elevation range
 SR_elev_range <- lm(SR ~ elev_range +
@@ -460,7 +460,7 @@ SR_elev_range <- lm(SR ~ elev_range +
                       clim_pca_4 + I(clim_pca_4^2),
                     data=data,
                     na.action = na.fail)
-summary(SR_elev_range)$r.squared - summary(SR_clim)$r.squared
+summary(SR_elev_range)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Climate distance, present vs. LGM
 SR_clim_diff_LGM <- lm(SR ~ clim_diff_LGM +
@@ -470,7 +470,7 @@ SR_clim_diff_LGM <- lm(SR ~ clim_diff_LGM +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(SR_clim_diff_LGM)$r.squared - summary(SR_clim)$r.squared
+summary(SR_clim_diff_LGM)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Climate distance, present vs. MidHolo
 SR_clim_diff_MidHol <- lm(SR ~ clim_diff_MidHol +
@@ -480,7 +480,7 @@ SR_clim_diff_MidHol <- lm(SR ~ clim_diff_MidHol +
                             clim_pca_4 + I(clim_pca_4^2),
                           data=data,
                           na.action = na.fail)
-summary(SR_clim_diff_MidHol)$r.squared - summary(SR_clim)$r.squared
+summary(SR_clim_diff_MidHol)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Past ice cover
 SR_ice_cover <- lm(SR ~ ice_cover +
@@ -490,7 +490,7 @@ SR_ice_cover <- lm(SR ~ ice_cover +
                      clim_pca_4 + I(clim_pca_4^2),
                    data=data,
                    na.action = na.fail)
-summary(SR_ice_cover)$r.squared - summary(SR_clim)$r.squared
+summary(SR_ice_cover)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Years since significant land conversion
 SR_LandConvYears <- lm(SR ~ LandConvYears +
@@ -500,7 +500,7 @@ SR_LandConvYears <- lm(SR ~ LandConvYears +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(SR_LandConvYears)$r.squared - summary(SR_clim)$r.squared
+summary(SR_LandConvYears)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # Human Impact Index
 SR_HII <- lm(SR ~ HII +
@@ -510,7 +510,7 @@ SR_HII <- lm(SR ~ HII +
                clim_pca_4 + I(clim_pca_4^2),
              data=data,
              na.action = na.fail)
-summary(SR_HII)$r.squared - summary(SR_clim)$r.squared
+summary(SR_HII)$adj.r.squared - summary(SR_clim)$adj.r.squared
 
 # ---------- Functional richness ----------
 
@@ -536,7 +536,7 @@ FR_Landmass_area <- lm(FR ~ log(Landmass_area) +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(FR_Landmass_area)$r.squared - summary(FR_clim)$r.squared
+summary(FR_Landmass_area)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Mean elevation
 FR_elev_mean <- lm(FR ~ elev_mean + I(elev_mean^2) +
@@ -546,7 +546,7 @@ FR_elev_mean <- lm(FR ~ elev_mean + I(elev_mean^2) +
                      clim_pca_4 + I(clim_pca_4^2),
                    data=data,
                    na.action = na.fail)
-summary(FR_elev_mean)$r.squared - summary(FR_clim)$r.squared
+summary(FR_elev_mean)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Elevation range
 FR_elev_range <- lm(FR ~ elev_range +
@@ -556,7 +556,7 @@ FR_elev_range <- lm(FR ~ elev_range +
                       clim_pca_4 + I(clim_pca_4^2),
                     data=data,
                     na.action = na.fail)
-summary(FR_elev_range)$r.squared - summary(FR_clim)$r.squared
+summary(FR_elev_range)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Climate distance, present vs. LGM
 FR_clim_diff_LGM <- lm(FR ~ clim_diff_LGM +
@@ -566,7 +566,7 @@ FR_clim_diff_LGM <- lm(FR ~ clim_diff_LGM +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(FR_clim_diff_LGM)$r.squared - summary(FR_clim)$r.squared
+summary(FR_clim_diff_LGM)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Climate distance, present vs. MidHolo
 FR_clim_diff_MidHol <- lm(FR ~ clim_diff_MidHol +
@@ -576,7 +576,7 @@ FR_clim_diff_MidHol <- lm(FR ~ clim_diff_MidHol +
                             clim_pca_4 + I(clim_pca_4^2),
                           data=data,
                           na.action = na.fail)
-summary(FR_clim_diff_MidHol)$r.squared - summary(FR_clim)$r.squared
+summary(FR_clim_diff_MidHol)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Past ice cover
 FR_ice_cover <- lm(FR ~ ice_cover +
@@ -586,7 +586,7 @@ FR_ice_cover <- lm(FR ~ ice_cover +
                      clim_pca_4 + I(clim_pca_4^2),
                    data=data,
                    na.action = na.fail)
-summary(FR_ice_cover)$r.squared - summary(FR_clim)$r.squared
+summary(FR_ice_cover)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Years since significant land conversion
 FR_LandConvYears <- lm(FR ~ LandConvYears +
@@ -596,7 +596,7 @@ FR_LandConvYears <- lm(FR ~ LandConvYears +
                          clim_pca_4 + I(clim_pca_4^2),
                        data=data,
                        na.action = na.fail)
-summary(FR_LandConvYears)$r.squared - summary(FR_clim)$r.squared
+summary(FR_LandConvYears)$adj.r.squared - summary(FR_clim)$adj.r.squared
 
 # Human Impact Index
 FR_HII <- lm(FR ~ HII +
@@ -606,4 +606,4 @@ FR_HII <- lm(FR ~ HII +
                clim_pca_4 + I(clim_pca_4^2),
              data=data,
              na.action = na.fail)
-summary(FR_HII)$r.squared - summary(FR_clim)$r.squared
+summary(FR_HII)$adj.r.squared - summary(FR_clim)$adj.r.squared
