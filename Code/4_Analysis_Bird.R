@@ -91,7 +91,7 @@ bird_SR_results$varpart <- factor(c("Shared","Environment only",
 bird_SR_results$R2 <- c(R2_shared, R2_env_only, R2_pb_only)
 write.csv(bird_SR_results, "Results/bird_SR_results.csv")
 
-# ---------- Map differences in residuals (Extended Data Fig. 1a) ----------
+# ---------- Map differences in residuals (Supplementary Fig. 1a) ----------
 
 # Difference with/without phylobetadiversity
 res_df <- data.frame(
@@ -175,7 +175,7 @@ bird_PD_results$varpart <- factor(c("Shared","Environment only",
 bird_PD_results$R2 <- c(R2_shared, R2_env_only, R2_pb_only)
 write.csv(bird_PD_results, "Results/bird_PD_results.csv")
 
-# ---------- Map differences in residuals (Extended Data Fig. 1b) ----------
+# ---------- Map differences in residuals (Supplementary Fig. 1b) ----------
 
 # Difference with/without phylobetadiversity
 res_df <- data.frame(
@@ -259,7 +259,7 @@ bird_FR_results$varpart <- factor(c("Shared","Environment only",
 bird_FR_results$R2 <- c(R2_shared, R2_env_only, R2_pb_only)
 write.csv(bird_FR_results, "Results/bird_FR_results.csv")
 
-# ---------- Map differences in residuals (Extended Data Fig. 1c) ----------
+# ---------- Map differences in residuals (Supplementary Fig. 1c) ----------
 
 # Difference with/without phylobetadiversity
 res_df <- data.frame(
@@ -343,7 +343,7 @@ bird_FB_results$varpart <- factor(c("Shared","Environment only",
 bird_FB_results$R2 <- c(R2_shared, R2_env_only, R2_pb_only)
 write.csv(bird_FB_results, "Results/bird_FB_results.csv")
 
-# ---------- Map differences in residuals (Extended Data Fig. 1d) ----------
+# ---------- Map differences in residuals (Supplementary Fig. 1d) ----------
 
 # Difference with/without phylobetadiversity
 res_df <- data.frame(

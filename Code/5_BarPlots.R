@@ -175,7 +175,7 @@ ggplot(results) +
   guides(fill=guide_legend(ncol=1))
 dev.off()
 
-# ----- BAT OTHER RESULTS (Extended Data Fig. 7) ----------
+# ----- BAT OTHER RESULTS (Supplementary Fig. 5) ----------
 
 # ---------- Species richness ----------
 # Load data

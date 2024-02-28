@@ -101,7 +101,7 @@ saveRDS(sp_faxes_coord_bat, "Data/bat_func_PCoA.RDS")
 
 # Check quality of PCoA
 fspaces_quality_bat$"quality_fspaces"
-# Lowest mad score is 2 axes, but that's far fewer axes used for birds/mammals 
+# Lowest mad score is 2 axes, but that's far fewer axes than used for birds/mammals 
 # Use 3 axes going forward
 
 # ---------- Calculate functional richness ----------

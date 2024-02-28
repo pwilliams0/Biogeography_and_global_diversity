@@ -98,7 +98,6 @@ pb_scores$cell_id <- as.integer(rownames(pb_scores)) # create a column of site n
 pb_plot <- cells %>%
   right_join(pb_scores, by="cell_id") %>%
   mutate(cell_id = as.character(cell_id),
-         MDS1 = -MDS1,
          MDS1 = MDS1-min(MDS1),
          MDS1 = MDS1/max(MDS1),
          MDS2 = MDS2-min(MDS2),
@@ -108,12 +107,12 @@ pb_plot <- cells %>%
 svg("Results/pb_mamm_nmds.svg",
     width = 2, height = 2)
 ggplot(pb_plot) +
-  aes(x = MDS1, y = MDS2, color = Realm) +
+  aes(x = MDS2, y = MDS1, color = Realm) +
   geom_point(shape = 19, size=.3) +
   scale_color_manual(values=pal) +
   coord_fixed(1) +
   theme_classic() +
-  labs(x = "NMDS 1", y ="NMDS 2") +
+  labs(x = "NMDS 2", y ="NMDS 1") +
   theme(legend.position = "none",
         axis.text = element_text(color="black",
                                  size=6),
@@ -123,13 +122,13 @@ dev.off()
 
 # ----- NMDS PLOTS, 3 AXES ----------
 
-# ---------- Birds (Extended Data Fig. 3a-c) ----------
+# ---------- Birds (Supplementary Fig. 4a-c) ----------
 
 # Load phylobetadiversity NMDS coordinates
 pb_NMDS <- read.csv("Data/bird_pb_NMDS.csv")
 
 # Join with cells to get Realm
-# Flip axes so x and y axes can be same for all plots
+# Flip axes in order to use same scales for all three axes
 pb_plot <- cells %>%
   right_join(pb_NMDS, by="cell_id") %>%
   mutate(cell_id = as.character(cell_id),
@@ -186,13 +185,13 @@ ggplot(pb_plot) +
         line = element_line(size = .25))
 dev.off()
 
-# ---------- Mammals (Extended Data Fig. 3d-f)  ----------
+# ---------- Mammals (Supplementary Fig. 4d-f)  ----------
 
 # Load phylobetadiversity NMDS coordinates
 pb_NMDS <- read.csv("Data/mamm_pb_NMDS.csv")
 
 # Join with cells to get Realm
-# Flip axes so x and y axes can be same for all plots
+# Flip axes in order to use same scales for all three axes
 pb_plot <- cells %>%
   right_join(pb_NMDS, by="cell_id") %>%
   mutate(cell_id = as.character(cell_id),
@@ -250,13 +249,13 @@ ggplot(pb_plot) +
         line = element_line(size = .25))
 dev.off()
 
-# ---------- Bats (Extended Data Fig. 3g-i)  ----------
+# ---------- Bats (Supplementary Fig. 4g-i)  ----------
 
 # Load phylobetadiversity NMDS coordinates
 pb_NMDS <- read.csv("Data/bat_pb_NMDS.csv")
 
 # Join with cells to get Realm
-# Flip axes to be more interpretable and consistent with other taxa
+# Flip axes in order to use same scales for all three axes
 pb_plot <- cells %>%
   right_join(pb_NMDS, by="cell_id") %>%
   mutate(cell_id = as.character(cell_id),
@@ -315,7 +314,7 @@ ggplot(pb_plot) +
 dev.off()
 
 # ----- SCREE PLOTS ----------
-# ---------- Birds (Extended Data Fig. 5a) ----------
+# ---------- Birds (Supplementary Fig. 7a) ----------
 
 # Load phylobetadiversity turnover distance matrix
 pb_dist <- readRDS("Data/bird_pb_dist.RDS")
@@ -340,7 +339,7 @@ axis(2, lwd=.5)
 title(ylab="Stress", xlab="Number of Dimensions", line=2)
 dev.off()
 
-# ---------- Mammals (Extended Data Fig. 5b)  ----------
+# ---------- Mammals (Supplementary Fig. 7b)  ----------
 
 # Load phylobetadiversity turnover distance matrix
 pb_dist <- readRDS("Data/mamm_pb_dist.RDS")
@@ -365,7 +364,7 @@ axis(2, lwd=.5)
 title(ylab="Stress", xlab="Number of Dimensions", line=2)
 dev.off()
 
-# ---------- Bats (Extended Data Fig. 5c)  ----------
+# ---------- Bats (Supplementary Fig. 7c)  ----------
 
 # Load phylobetadiversity turnover distance matrix
 pb_dist <- readRDS("Data/bat_pb_dist.RDS")

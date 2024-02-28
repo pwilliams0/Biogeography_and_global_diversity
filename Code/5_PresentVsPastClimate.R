@@ -1,10 +1,11 @@
 #===================================================================#
 # Compare R2 values from models using climate data from present day #
 #  (Present), last glacial maximum (LGM), & mid-Holocene (MidHol)   #
-#                      (Extended Data Table 3)                      #
+#                      (Supplementary Table 4)                      #
 #===================================================================#
 
 library(tidyverse)
+library(sf)
 sf_use_s2(FALSE) # Avoid some issues of invalid geometries
 
 # ----- BIRDS  ----------

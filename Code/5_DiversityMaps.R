@@ -19,7 +19,7 @@ world <- ne_coastline(scale = "medium", returnclass = "sf") %>%
 
 # ----- BIRDS ----------
 
-# ---------- Species richness (Extended Data Fig. 2a) ----------
+# ---------- Species richness (Supplementary Fig. 3a) ----------
 # Load data
 data <- cells %>%
   right_join(read.csv("Data/bird_SR_cells.csv"), "cell_id")
@@ -41,7 +41,7 @@ ggplot() +
         legend.key.width = unit(1.1,"cm"))
 dev.off()
 
-# ---------- Phylogenetic diversity (Extended Data Fig. 2b) ----------
+# ---------- Phylogenetic diversity (Supplementary Fig. 3b) ----------
 # Load data
 data <- cells %>%
   right_join(read.csv("Data/bird_PD_cells.csv"), "cell_id")
@@ -63,7 +63,7 @@ ggplot() +
         legend.key.width = unit(1.1,"cm"))
 dev.off()
 
-# ---------- Functional richness (Extended Data Fig. 2c) ----------
+# ---------- Functional richness (Supplementary Fig. 3c) ----------
 # Load data
 data <- cells %>%
   right_join(read.csv("Data/bird_FR_cells.csv"), "cell_id")
@@ -109,7 +109,7 @@ dev.off()
 
 # ----- MAMMALS ----------
 
-# ---------- Species richness (Extended Data Fig. 2d) ----------
+# ---------- Species richness (Supplementary Fig. 3d) ----------
 # Load data
 data <- cells %>%
   right_join(read.csv("Data/mamm_SR_cells.csv"), "cell_id")
@@ -131,7 +131,7 @@ ggplot() +
         legend.key.width = unit(1.1,"cm"))
 dev.off()
 
-# ---------- Phylogenetic diversity (Extended Data Fig. 2e) ----------
+# ---------- Phylogenetic diversity (Supplementary Fig. 3e) ----------
 # Load data
 data <- cells %>%
   right_join(read.csv("Data/mamm_PD_cells.csv"), "cell_id")
@@ -153,7 +153,7 @@ ggplot() +
         legend.key.width = unit(1.1,"cm"))
 dev.off()
 
-# ---------- Functional richness (Extended Data Fig. 2f) ----------
+# ---------- Functional richness (Supplementary Fig. 3f) ----------
 # Load data
 data <- cells %>%
   right_join(read.csv("Data/mamm_FR_cells.csv"), "cell_id")
@@ -199,7 +199,7 @@ dev.off()
 
 # ----- BATS ----------
 
-# ---------- Species richness (Extended Data Fig. 2g) ----------
+# ---------- Species richness (Supplementary Fig. 3g) ----------
 # Load data
 data <- cells %>%
   right_join(read.csv("Data/bat_SR_cells.csv"), "cell_id")
@@ -221,7 +221,7 @@ ggplot() +
         legend.key.width = unit(1.1,"cm"))
 dev.off()
 
-# ---------- Phylogenetic diversity (Extended Data Fig. 2h) ----------
+# ---------- Phylogenetic diversity (Supplementary Fig. 3h) ----------
 # Load data
 data <- cells %>%
   right_join(read.csv("Data/bat_PD_cells.csv"), "cell_id")
@@ -266,7 +266,7 @@ ggplot() +
         legend.key.width = unit(1.3,"cm"))
 dev.off()
 
-# ---------- Mean func beta turnover (Extended Data Fig. 2i) ----------
+# ---------- Mean func beta turnover (Supplementary Fig. 3i) ----------
 # Load data
 data <- cells %>%
   right_join(read.csv("Data/bat_mean_fb.csv"), "cell_id") %>%

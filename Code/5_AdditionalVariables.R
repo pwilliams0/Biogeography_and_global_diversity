@@ -1,10 +1,11 @@
 #============================================================#
 # Compare R2 values from models using additional environment #
 #                 variables besides climate                  #
-#                  (Extended Data Table 2)                   #
+#                  (Supplementary Table 2)                   #
 #============================================================#
 
 library(tidyverse)
+library(sf)
 sf_use_s2(FALSE) # Avoid some issues of invalid geometries
 
 # ----- LOAD CELLS WITH ALL COVARIATES  ----------
@@ -607,3 +608,4 @@ FR_HII <- lm(FR ~ HII +
              data=data,
              na.action = na.fail)
 summary(FR_HII)$adj.r.squared - summary(FR_clim)$adj.r.squared
+

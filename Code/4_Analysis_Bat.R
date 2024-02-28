@@ -91,7 +91,7 @@ bat_SR_results$varpart <- factor(c("Shared","Environment only",
 bat_SR_results$R2 <- c(R2_shared, R2_env_only, R2_pb_only)
 write.csv(bat_SR_results, "Results/bat_SR_results.csv")
 
-# ---------- Map differences in residuals (Extended Data Fig. 1g) ----------
+# ---------- Map differences in residuals (Supplementary Fig. 1g) ----------
 
 # Difference with/without phylobetadiversity
 res_df <- data.frame(
@@ -175,7 +175,7 @@ bat_PD_results$varpart <- factor(c("Shared","Environment only",
 bat_PD_results$R2 <- c(R2_shared, R2_env_only, R2_pb_only)
 write.csv(bat_PD_results, "Results/bat_PD_results.csv")
 
-# ---------- Map differences in residuals (Extended Data Fig. 1h) ----------
+# ---------- Map differences in residuals (Supplementary Fig. 1h) ----------
 
 # Difference with/without phylobetadiversity
 res_df <- data.frame(
@@ -260,7 +260,7 @@ bat_FR_results$varpart <- factor(c("Shared","Environment only",
 bat_FR_results$R2 <- c(R2_shared, R2_env_only, R2_pb_only)
 write.csv(bat_FR_results, "Results/bat_FR_results.csv")
 
-# ---------- Map differences in residuals (Extended Data Fig. 1i) ----------
+# ---------- Map differences in residuals (Supplementary Fig. 1i) ----------
 
 # Difference with/without phylobetadiversity
 res_df <- data.frame(
@@ -344,7 +344,7 @@ bat_FB_results$varpart <- factor(c("Shared","Environment only",
 bat_FB_results$R2 <- c(R2_shared, R2_env_only, R2_pb_only)
 write.csv(bat_FB_results, "Results/bat_FB_results.csv")
 
-# ---------- Map differences in residuals (Extended Data Fig. 1j) ----------
+# ---------- Map differences in residuals (Supplementary Fig. 1j) ----------
 
 # Difference with/without phylobetadiversity
 res_df <- data.frame(

@@ -175,7 +175,7 @@ mamm_PD_results$varpart <- factor(c("Shared","Environment only",
 mamm_PD_results$R2 <- c(R2_shared, R2_env_only, R2_pb_only)
 write.csv(mamm_PD_results, "Results/mamm_PD_results.csv")
 
-# ---------- Map differences in residuals (Extended Data Fig. 1e) ----------
+# ---------- Map differences in residuals (Supplementary Fig. 1e) ----------
 
 # Difference with/without phylobetadiversity
 res_df <- data.frame(
@@ -259,7 +259,7 @@ mamm_FR_results$varpart <- factor(c("Shared","Environment only",
 mamm_FR_results$R2 <- c(R2_shared, R2_env_only, R2_pb_only)
 write.csv(mamm_FR_results, "Results/mamm_FR_results.csv")
 
-# ---------- Map differences in residuals (Extended Data Fig. 1f) ----------
+# ---------- Map differences in residuals (Supplementary Fig. 1f) ----------
 
 # Difference with/without phylobetadiversity
 res_df <- data.frame(
@@ -288,7 +288,7 @@ dev.off()
 # ---------- Run models, save R2 ----------
 
 # Load data
-data <- read.csv("Data/mamm_mean_FB.csv") %>%
+data <- read.csv("Data/mamm_mean_fb.csv") %>%
   left_join(cells, by="cell_id")
 
 # Run model, all covariates

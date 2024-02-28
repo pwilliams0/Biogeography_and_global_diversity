@@ -85,7 +85,7 @@ svg("Results/mamm_FB_overlap2.svg",
 beta_plot_fruits$PC2_PC3
 dev.off()
 
-# ----- BATS, COLOMBIA VS MALAYSIA (Extended Data Fig. 4) ----------
+# ----- BATS, COLOMBIA VS MALAYSIA (Supplementary Fig. 6) ----------
 
 # Load PCoA
 bat_func_PCoA <- readRDS("Data/bat_func_PCoA.RDS")

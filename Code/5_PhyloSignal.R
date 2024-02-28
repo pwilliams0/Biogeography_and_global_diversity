@@ -1,10 +1,11 @@
 #=================================================================#
-# Calculate phylogenetic signal of traits (Extended Data Table 1) #
+# Calculate phylogenetic signal of traits (Supplementary Table 1) #
 #=================================================================#
 
 library(tidyverse)
 library(ape)
 library(phytools)
+library(caper)
 
 # ----- MAMMALS ----------
 
@@ -15,13 +16,15 @@ mamm_traits <- read.csv("Data/mamm_cell_df.csv") %>%
                 Diet.Fish, Diet.Scav, Diet.Fruit,
                 Diet.Nect, Diet.Seed, Diet.Herb,
                 ForStrat, LogBodyMass) %>%
-  mutate(ForStrat = as.factor(ForStrat)) %>%
+  mutate(vals = 1) %>%
+  pivot_wider(names_from = ForStrat, values_from = vals,
+              values_fill = 0) %>%
   column_to_rownames("names_phylo")
 
 # Load phylogeny
 mamm_phylo <- ape::read.tree("Data/Raw/Upham_mean_phylogeny_ultrametric.tree")
 
-# Extract each trait
+# Extract each continuous trait
 Diet.Inv <- setNames(mamm_traits$Diet.Inv,
                       rownames(mamm_traits))
 Diet.Vert <- setNames(mamm_traits$Diet.Vert,
@@ -40,6 +43,7 @@ Diet.Herb <- setNames(mamm_traits$Diet.Herb,
                     rownames(mamm_traits))
 LogBodyMass <- setNames(mamm_traits$LogBodyMass,
                       rownames(mamm_traits))
+
 # Calculate phylogenetic signal K
 K.Diet.Fish <- phylosig(mamm_phylo, Diet.Fish,
                    test=TRUE)
@@ -68,6 +72,23 @@ print(K.Diet.Vert)
 K.LogBodyMass <- phylosig(mamm_phylo,LogBodyMass,
                      test=TRUE)
 print(K.LogBodyMass)
+
+# Calculate phylogenetic signal D
+mamm_forstrat <- mamm_traits %>%
+  dplyr::select(Ar, G, S, A) %>%
+  rownames_to_column("names")
+D.ForStrat.Ar <- phylo.d(mamm_forstrat, mamm_phylo, names, Ar)
+print(D.ForStrat.Ar)
+print(1-D.ForStrat.Ar$DEstimate)
+D.ForStrat.G <- phylo.d(mamm_forstrat, mamm_phylo, names, G)
+print(D.ForStrat.G)
+print(1-D.ForStrat.G$DEstimate)
+D.ForStrat.S <- phylo.d(mamm_forstrat, mamm_phylo, names, S)
+print(D.ForStrat.S)
+print(1-D.ForStrat.S$DEstimate)
+D.ForStrat.A <- phylo.d(mamm_forstrat, mamm_phylo, names, A)
+print(D.ForStrat.A)
+print(1-D.ForStrat.A$DEstimate)
 
 # ----- BIRDS ----------
 
