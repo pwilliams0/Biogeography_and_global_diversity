@@ -361,48 +361,53 @@ communities</h1>
 </div>
 <div id="abstract" class="section level2">
 <h2>Abstract</h2>
-<p>Biogeographic history can lead to differences in biodiversity across
+<p>Biogeographic history can lead to variation in biodiversity across
 regions, but it remains unclear how the degree of biogeographic
 isolation among communities may lead to differences in biodiversity.
 Biogeographic analyses generally treat regions as discrete units, but
 species assemblages differ in how much biogeographic history they share,
 just as species differ in how much evolutionary history they share.
 Here, we use a continuous measure of biogeographic distance,
-‘phylobetadiversity’, to analyze the influence of biogeographic
-isolation on the taxonomic and functional diversity of global mammal and
-bird assemblages. On average, environment predicts biodiversity better
-than isolation, especially for birds. However, mammals in deeply
-isolated regions are strongly influenced by isolation, and mammal
-assemblages in such regions also contain distinctive sets of functional
-traits. Pantropical differences in bat functional richness also reflect
-the influence of biogeographic isolation. These examples show how
-long-lasting biogeographic barriers can lead to divergent diversity
-patterns, against the backdrop of environmental determinism in
-structuring diversity across most of the world.</p>
+phylobetadiversity, to analyze the influence of biogeographic isolation
+on the taxonomic and functional diversity of global mammal and bird
+assemblages. On average, biodiversity was better predicted by
+environment than by isolation, especially for birds. However, mammals in
+deeply isolated regions are strongly influenced by isolation; mammal
+assemblages in Australia and Madagascar, for example, are much less
+diverse than predicted by environment alone and contain unique
+combinations of functional traits compared to other regions. Neotropical
+bat assemblages are far more functionally diverse than Paleotropical
+assemblages, reflecting the different trajectories of bat communities
+that have developed in isolation over tens of millions of years. Our
+results elucidate how long-lasting biogeographic barriers can lead to
+divergent diversity patterns, against the backdrop of environmental
+determinism that predominantly structures diversity across most of the
+world.</p>
 </div>
 <div id="code" class="section level2">
 <h2>Code</h2>
 <ol style="list-style-type: decimal">
-<li><a href="Code/0_DataPrep_AllTaxa.R">0_DataPrep_AllTaxa.R</a>: Create
-global 2x2 degree grid cells, calculate environment variables for each
-grid cell, and create assemblages for each grid cell. Environment
+<li><strong><a href="Code/0_DataPrep_AllTaxa.R">0_DataPrep_AllTaxa.R</a></strong>:
+Create global 2x2 degree grid cells, calculate environment variables for
+each grid cell, and create assemblages for each grid cell. Environment
 variables include mean elevation, elevation range, present-day climate,
 past climate, distance between present-day climate and past climate,
 past ice cover, years since significant land conversion, and Human
 Impact Index. Assemblages are lists of all bird, mammal, or bat species
 with range maps that overlap a given cell.</li>
-<li>1_SR_PD_FR_XXXX.R: Calculate species richness (SR), phylogenetic
-diversity (PD), and functional richness (FR) for each grid cell. Also
-calculate functional PCoA. Separate scripts for birds, mammals, and
-bats.
+<li><strong>1_SR_PD_FR_XXXX.R</strong>: Calculate species richness (SR),
+phylogenetic diversity (PD), and functional richness (FR) for each grid
+cell. Also calculate functional PCoA. Separate scripts for birds,
+mammals, and bats.
 <ul>
 <li><a href="Code/1_SR_PD_FR_Bird.R">1_SR_PD_FR_Bird.R</a></li>
 <li><a href="Code/1_SR_PD_FR_Mamm.R">1_SR_PD_FR_Mamm.R</a></li>
 <li><a href="Code/1_SR_PD_FR_Bat.R">1_SR_PD_FR_Bat.R</a></li>
 </ul></li>
-<li>2_PhyloB_Bird_XX.R: Calculate phylobetadiversity for birds on
-subsets of grid cells. Calculating all pairwise comparisions is
-computationally intractable, so grid cells are split into 5 groups.
+<li><strong>2_PhyloB_Bird_XX.R</strong>: Calculate phylobetadiversity
+for birds on subsets of grid cells. Calculating all pairwise
+comparisions is computationally intractable, so grid cells are split
+into 5 groups.
 <ul>
 <li><a href="Code/2_PhyloB_Bird_12.R">2_PhyloB_Bird_12.R</a>: Bird
 phylobetadiversity for cells in groups 1 and 2.</li>
@@ -425,9 +430,10 @@ phylobetadiversity for cells in groups 3 and 5.</li>
 <li><a href="Code/2_PhyloB_Bird_45.R">2_PhyloB_Bird_45.R</a>: Bird
 phylobetadiversity for cells in groups 4 and 5.</li>
 </ul></li>
-<li>2_PhyloB_Mamm_XX.R: Calculate phylobetadiversity for mammals on
-subsets of grid cells. Calculating all pairwise comparisions is
-computationally intractable, so grid cells are split into 4 groups.
+<li><strong>2_PhyloB_Mamm_XX.R</strong>: Calculate phylobetadiversity
+for mammals on subsets of grid cells. Calculating all pairwise
+comparisions is computationally intractable, so grid cells are split
+into 4 groups.
 <ul>
 <li><a href="Code/2_PhyloB_Mamm_12.R">2_PhyloB_Mamm_12.R</a>: Mammal
 phylobetadiversity for cells in groups 1 and 2.</li>
@@ -442,9 +448,9 @@ phylobetadiversity for cells in groups 2 and 4.</li>
 <li><a href="Code/2_PhyloB_Mamm_34.R">2_PhyloB_Mamm_34.R</a>: Mammal
 phylobetadiversity for cells in groups 3 and 4.</li>
 </ul></li>
-<li>2_PhyloB_Bat_XX.R: Calculate phylobetadiversity for bats on subsets
-of grid cells. Calculating all pairwise comparisions is computationally
-intractable, so grid cells are split into 3 groups.
+<li><strong>2_PhyloB_Bat_XX.R</strong>: Calculate phylobetadiversity for
+bats on subsets of grid cells. Calculating all pairwise comparisions is
+computationally intractable, so grid cells are split into 3 groups.
 <ul>
 <li><a href="Code/2_PhyloB_Bat_12.R">2_PhyloB_Bat_12.R</a>: Bat
 phylobetadiversity for cells in groups 1 and 2.</li>
@@ -453,9 +459,10 @@ phylobetadiversity for cells in groups 1 and 3.</li>
 <li><a href="Code/2_PhyloB_Bat_23.R">2_PhyloB_Bat_23.R</a>: Bat
 phylobetadiversity for cells in groups 2 and 3.</li>
 </ul></li>
-<li>2_FuncB_Bird_XX.R: Calculate functional beta diversity for birds on
-subsets of grid cells. Calculating all pairwise comparisions is
-computationally intractable, so grid cells are split into 4 groups.
+<li><strong>2_FuncB_Bird_XX.R</strong>: Calculate functional beta
+diversity for birds on subsets of grid cells. Calculating all pairwise
+comparisions is computationally intractable, so grid cells are split
+into 4 groups.
 <ul>
 <li><a href="Code/2_FuncB_Bird_12.R">2_FuncB_Bird_12.R</a>: Bird
 functional beta diversity for cells in groups 1 and 2.</li>
@@ -470,7 +477,7 @@ functional beta diversity for cells in groups 2 and 4.</li>
 <li><a href="Code/2_FuncB_Bird_34.R">2_FuncB_Bird_34.R</a>: Bird
 functional beta diversity for cells in groups 3 and 4.</li>
 </ul></li>
-<li>3_PhyloB_XXXX_full.R: Combine files to create full
+<li><strong>3_PhyloB_XXXX_full.R</strong>: Combine files to create full
 phylobetadiversity turnover distance matrix, and save NMDS coordinates
 for 3 axes. Separate scripts for birds, mammals, and bats.
 <ul>
@@ -478,191 +485,191 @@ for 3 axes. Separate scripts for birds, mammals, and bats.
 <li><a href="Code/3_PhyloB_Mamm_full.R">3_PhyloB_Mamm_full.R</a></li>
 <li><a href="Code/3_PhyloB_Bat_full.R">3_PhyloB_Bat_full.R</a></li>
 </ul></li>
-<li><a href="Code/3_FuncB_Bird_full.R">3_FuncB_Bird_full.R</a>: Combine
-files to create functional beta diversity turnover distance matrix for
-birds, then calculate mean functional beta diversity turnover for
-birds.</li>
-<li>3_FuncB_XXXX.R: Calculate functional beta diversity, then calculate
-mean functional beta diversity turnover. Separate scripts for mammals
-and bats.
+<li><strong><a href="Code/3_FuncB_Bird_full.R">3_FuncB_Bird_full.R</a></strong>:
+Combine files to create functional beta diversity turnover distance
+matrix for birds, then calculate mean functional beta diversity turnover
+for birds.</li>
+<li><strong>3_FuncB_XXXX.R</strong>: Calculate functional beta
+diversity, then calculate mean functional beta diversity turnover.
+Separate scripts for mammals and bats.
 <ul>
 <li><a href="Code/3_FuncB_Mamm.R">3_FuncB_Mamm.R</a></li>
 <li><a href="Code/3_FuncB_Bat.R">3_FuncB_Bat.R</a></li>
 </ul></li>
-<li>4_Analysis_XXXX.R: Run models for species richness, phylogenetic
-diversity, functional richness, and mean functional beta diversity
-turnover. Save variance partitioning results. Calculate differences in
-residuals and save figures (Fig. 3 and Supplementary Fig. 1). Separate
-scripts for birds, mammals, and bats.
+<li><strong>4_Analysis_XXXX.R</strong>: Run models for species richness,
+phylogenetic diversity, functional richness, and mean functional beta
+diversity turnover. Save variance partitioning results. Calculate
+differences in residuals and save figures (Fig. 3 and Supplementary Fig.
+1). Separate scripts for birds, mammals, and bats.
 <ul>
 <li><a href="Code/4_Analysis_Bird.R">4_Analysis_Bird.R</a></li>
 <li><a href="Code/4_Analysis_Mamm.R">4_Analysis_Mamm.R</a></li>
 <li><a href="Code/4_Analysis_Bat.R">4_Analysis_Bat.R</a></li>
 </ul></li>
-<li><a href="Code/5_BarPlots.R">5_BarPlots.R</a>: Create barplots of
-variance partitioning results for birds, mammals, and bats (Fig. 2, Fig.
-6a, and Supplementary Fig. 5).</li>
-<li><a href="Code/5_DiversityMaps.R">5_DiversityMaps.R</a>: Create maps
-of global diversity patterns of species richness, phylogenetic
+<li><strong><a href="Code/5_BarPlots.R">5_BarPlots.R</a></strong>:
+Create barplots of variance partitioning results for birds, mammals, and
+bats (Fig. 2, Fig. 6a, and Supplementary Fig. 5).</li>
+<li><strong><a href="Code/5_DiversityMaps.R">5_DiversityMaps.R</a></strong>: Create
+maps of global diversity patterns of species richness, phylogenetic
 diversity, functional richness, and mean functional beta diversity
 turnover for birds, mammals, and bats (Fig. 4, Fig. 6b, and
 Supplementary Fig. 3).</li>
-<li><a href="Code/5_PhyloB_Figures.R">5_PhyloB_Figures.R</a>: Create
+<li><strong><a href="Code/5_PhyloB_Figures.R">5_PhyloB_Figures.R</a></strong>: Create
 phylobetadiversity figures, including NMDS plots using 2 axes (Fig. 1),
 NMDS plots using 3 axes (Supplementary Fig. 4), and scree plots
 (Supplementary Fig. 7).</li>
-<li><a href="Code/5_FuncSpace_Figures.R">5_FuncSpace_Figures.R</a>:
+<li><strong><a href="Code/5_FuncSpace_Figures.R">5_FuncSpace_Figures.R</a></strong>:
 Create figures showing overlap in functional space (Fig. 5 and
 Supplementary Fig. 6).</li>
-<li>5_Analysis_Realm_XXXX.R: Run models for species richness,
-phylogenetic diversity, functional richness, and mean functional beta
-diversity turnover, using realm instead of phylobetadiversity.Calculate
-differences in residuals and save figures (Supplementary Fig. 2).
-Separate scripts for birds, mammals, and bats.
+<li><strong>5_Analysis_Realm_XXXX.R</strong>: Run models for species
+richness, phylogenetic diversity, functional richness, and mean
+functional beta diversity turnover, using realm instead of
+phylobetadiversity.Calculate differences in residuals and save figures
+(Supplementary Fig. 2). Separate scripts for birds, mammals, and bats.
 <ul>
 <li><a href="Code/5_Analysis_Realm_Bird.R">5_Analysis_Realm_Bird.R</a></li>
 <li><a href="Code/5_Analysis_Realm_Mamm.R">5_Analysis_Realm_Mamm.R</a></li>
 <li><a href="Code/5_Analysis_Realm_Bat.R">5_Analysis_Realm_Bat.R</a></li>
 </ul></li>
-<li><a href="Code/5_PhyloSignal.R">5_PhyloSignal.R</a>: Calculate
-phylogenetic signal of traits (Supplementary Table 1).</li>
-<li><a href="Code/5_AdditionalVariables.R">5_AdditionalVariables.R</a>:
+<li><strong><a href="Code/5_PhyloSignal.R">5_PhyloSignal.R</a></strong>:
+Calculate phylogenetic signal of traits (Supplementary Table 1).</li>
+<li><strong><a href="Code/5_AdditionalVariables.R">5_AdditionalVariables.R</a></strong>:
 Calculate additional variance explained by environment variables besides
 climate (Supplementary Table 2).</li>
-<li><a href="Code/5_PresentVsPastClimate.R">5_PresentVsPastClimate.R</a>:
+<li><strong><a href="Code/5_PresentVsPastClimate.R">5_PresentVsPastClimate.R</a></strong>:
 Calculate variance explained using climate data from present day, Last
-Glacial Maximum, and mid-Holocene (Supplementary Data Table 4).</li>
+Glacial Maximum, and mid-Holocene (Supplementary Table 4).</li>
 </ol>
 </div>
 <div id="data" class="section level2">
 <h2>Data</h2>
-<div id="raw-data-obtained-from-various-sources-as-indicated-below" class="section level3">
-<h3>Raw data (obtained from various sources as indicated below)</h3>
+<div id="raw-data" class="section level3">
+<h3>Raw data</h3>
 <ol style="list-style-type: decimal">
-<li><a href="Data/Raw/newRealms">newRealms</a>: Updated zoogeographic
-realms. Available from the Center for Macroecology, Evolution and
-Climate at the University of Copenhagen.</li>
-<li>BOTW: BirdLife range map data for birds (not publicly available).
-Due to the large size, we split the original GDB file into two
-shapefiles prior to data processing. ‘BIRDS_resident.shp’ consists of
-resident ranges (Seasonal == 1), and ‘BIRDS_nonresident.shp’ consists of
-other ranges (Seasonal != 1). Data downloaded in 2018. Available upon
-request from BirdLife International.</li>
-<li>MAMMALS: IUCN range map data for mammals (not publicly available).
-Data downloaded in 2018. Available from the IUCN Red List.</li>
-<li><a href="Data/Raw/BirdFuncDat.csv">BirdFuncDat.csv</a>: EltonTraits
-1.0 data for birds. Available from Figshare. Converted to CSV due to
-issues with original TXT file.</li>
-<li><a href="Data/Raw/MamFuncDat.txt">MamFuncDat.txt</a>: EltonTraits
-1.0 data for mammals. Available from Figshare.</li>
-<li><a href="Data/Raw/bird_names_cells.csv">bird_names_cells.csv</a>:
+<li><strong>newRealms</strong>: Zoogeographic realms. Available from the
+Center for Macroecology, Evolution and Climate at the University of
+Copenhagen (<a href="https://macroecology.ku.dk/resources/wallace">https://macroecology.ku.dk/resources/wallace</a>).</li>
+<li><strong>BOTW</strong>: BirdLife range map data for birds. Due to the
+large size, we split the original GDB file into two shapefiles prior to
+data processing. ‘BIRDS_resident.shp’ consisted of resident ranges
+(Seasonal == 1), and ‘BIRDS_nonresident.shp’ consisted of other ranges
+(Seasonal != 1). Data downloaded in 2018. Available upon request from
+BirdLife International (<a href="http://datazone.birdlife.org/species/requestdis">http://datazone.birdlife.org/species/requestdis</a>).</li>
+<li><strong>MAMMALS</strong>: IUCN range map data for mammals. Data
+downloaded in 2018. Available from the IUCN Red List (<a href="https://www.iucnredlist.org/resources/spatial-data-download">https://www.iucnredlist.org/resources/spatial-data-download</a>).</li>
+<li><strong>BirdFuncDat.csv</strong>: EltonTraits 1.0 data for birds.
+Converted to CSV due to issues with original TXT file. TXT file
+available from Figshare (<a href="https://doi.org/10.6084/m9.figshare.c.3306933.v1">https://doi.org/10.6084/m9.figshare.c.3306933.v1</a>)</li>
+<li><strong>MamFuncDat.txt</strong>: EltonTraits 1.0 data for mammals.
+Available from Figshare (<a href="https://doi.org/10.6084/m9.figshare.c.3306933.v1">https://doi.org/10.6084/m9.figshare.c.3306933.v1</a>).</li>
+<li><strong><a href="Data/Raw/bird_names_cells.csv">bird_names_cells.csv</a></strong>:
 Bird taxonomies for range map data (names_ICUN), trait data
 (names_elton), and phylogeny (names_phylo), manually aligned.</li>
-<li><a href="Data/Raw/mamm_names_cells.csv">mamm_names_cells.csv</a>:
+<li><strong><a href="Data/Raw/mamm_names_cells.csv">mamm_names_cells.csv</a></strong>:
 Mammal taxonomies for range map data (names_ICUN), trait data
 (names_elton), and phylogeny (names_phylo), manually aligned.</li>
-<li><a href="Data/Raw/bird_traits_cat.csv">bird_traits_cat.csv</a>:
+<li><strong><a href="Data/Raw/bird_traits_cat.csv">bird_traits_cat.csv</a></strong>:
 Trait type for each bird trait.</li>
-<li><a href="Data/Raw/mamm_traits_cat.csv">mamm_traits_cat.csv</a>:
+<li><strong><a href="Data/Raw/mamm_traits_cat.csv">mamm_traits_cat.csv</a></strong>:
 Trait type for each mammal trait.</li>
-<li><a href="Data/Raw/Stage2_MayrParSho_Hackett_mean%20phylogeny_ultrametric.tre">Stage2_MayrParSho_Hackett_mean
-phylogeny_ultrametric.tre</a>: Bird phylogeny, ultrametric consensus
-tree based on 1,000 credible phylogenies available from VertLife.</li>
-<li><a href="Data/Raw/Upham_mean_phylogeny_ultrametric.tree">Upham_mean_phylogeny_ultrametric.tree</a>:
-Mammal phylogeny, ultrametric consensus tree based on 1,000 credible
-phylogenies available from VertLife.</li>
-<li><a href="Data/Raw/Landmass_area_cells.csv">Landmass_area_cells.csv</a>:
+<li><strong>Stage2_MayrParSho_Hackett_mean
+phylogeny_ultrametric.tre</strong>: Bird phylogeny, ultrametric
+consensus tree created based on 1,000 credible phylogenies. Credible
+phylogenies available from BirdTree (<a href="https://birdtree.org/subsets/">https://birdtree.org/subsets/</a>).</li>
+<li><strong>Upham_mean_phylogeny_ultrametric.tree</strong>: Mammal
+phylogeny, ultrametric consensus tree based on 1,000 credible
+phylogenies. Credible phylogenies available from VertLife (<a href="http://vertlife.org/phylosubsets/">http://vertlife.org/phylosubsets/</a>).</li>
+<li><strong><a href="Data/Raw/Landmass_area_cells.csv">Landmass_area_cells.csv</a></strong>:
 Landmass area for each cell. Manually entered using the Global Islands
-dataset available from the United States Geological Survey.</li>
-<li>mn30_grd: Global Multi-resolution Terrain Elevation Data
-(GMTED2010). Files too large to push to GitHub. Available from the
-United States Geological Survey.</li>
-<li><a href="Data/Raw/wc2.1_10m_bio">wc2.1_10m_bio</a>: Bioclimatic
-variables, present day. Available from WorldClim.</li>
-<li><a href="Data/Raw/cclgmbi_10m">cclgmbi_10m</a>: WorldClim 1.4
-downscaled paleo climate, bioclimatic variables, Last Glacial Maximum.
-Available from WorldClim.</li>
-<li><a href="Data/Raw/ccmidbi_10m">ccmidbi_10m</a>: WorldClim 1.4
-downscaled paleo climate, bioclimatic variables, Mid Holocene. Available
-from WorldClim.</li>
-<li>KK10.nc: Anthropogenic land cover change over time. File too large
-to push to GitHub. Available from PANGAEA.</li>
-<li>hii_2019-01-01.tif: Human Impact Index, 2019 data. File too large to
-push to GitHub. Available from the Wildlife Conservation Society.</li>
+dataset available from the United States Geological Survey (<a href="https://rmgsc.cr.usgs.gov/gie/gie.shtml">https://rmgsc.cr.usgs.gov/gie/gie.shtml</a>).</li>
+<li><strong>mn30_grd</strong>: Global Multi-resolution Terrain Elevation
+Data (GMTED2010). Available from the United States Geological Survey (<a href="https://topotools.cr.usgs.gov/gmted_viewer/gmted2010_global_grids.php">https://topotools.cr.usgs.gov/gmted_viewer/gmted2010_global_grids.php</a>).</li>
+<li><strong>wc2.1_10m_bio</strong>: Bioclimatic variables, present day.
+Available from WorldClim (<a href="https://www.worldclim.org/data/worldclim21.html">https://www.worldclim.org/data/worldclim21.html</a>).</li>
+<li><strong>cclgmbi_10m</strong>: WorldClim 1.4 downscaled paleo
+climate, bioclimatic variables, Last Glacial Maximum. Available from
+WorldClim (<a href="https://www.worldclim.org/data/v1.4/paleo1.4.html">https://www.worldclim.org/data/v1.4/paleo1.4.html</a>).</li>
+<li><strong>ccmidbi_10m</strong>: WorldClim 1.4 downscaled paleo
+climate, bioclimatic variables, Mid Holocene. Available from WorldClim
+(<a href="https://www.worldclim.org/data/v1.4/paleo1.4.html">https://www.worldclim.org/data/v1.4/paleo1.4.html</a>).</li>
+<li><strong>KK10.nc</strong>: Anthropogenic land cover change over time.
+Available from PANGAEA (<a href="https://doi.pangaea.de/10.1594/PANGAEA.871369">https://doi.pangaea.de/10.1594/PANGAEA.871369</a>).</li>
+<li><strong>hii_2019-01-01.tif</strong>: Human Impact Index, 2019 data.
+Available from the Wildlife Conservation Society (<a href="https://wcshumanfootprint.org/data-access">https://wcshumanfootprint.org/data-access</a>).</li>
 </ol>
 </div>
-<div id="intermediate-data-products-for-running-analyses-and-making-figures-scripts-10-16-above" class="section level3">
-<h3>Intermediate data products (for running analyses and making figures,
-scripts 10-16 above)</h3>
+<div id="intermediate-data-products" class="section level3">
+<h3>Intermediate data products</h3>
 <ol style="list-style-type: decimal">
-<li><a href="Data/global_cells.shp">global_cells.shp</a>: 2x2 degree
+<li><strong><a href="Data/global_cells.shp">global_cells.shp</a></strong>: 2x2 degree
 latitude-longitude grid cells used in all analyses.</li>
-<li><a href="Data/clim_Present_cells.csv">clim_Present_cells.csv</a>:
+<li><strong><a href="Data/clim_Present_cells.csv">clim_Present_cells.csv</a></strong>:
 Climate PCA coordinates for 4 axes for each grid cell.</li>
-<li><a href="Data/elev_cells.csv">elev_cells.csv</a>: Mean elevation and
-elevation range of each grid cell.</li>
-<li>XXXX_cell_df.csv: Lists of species in each grid cell. Separate files
-for birds, mammals, and bats.
+<li><strong><a href="Data/elev_cells.csv">elev_cells.csv</a></strong>:
+Mean elevation and elevation range of each grid cell.</li>
+<li><strong>XXXX_cell_df.csv</strong>: Lists of species in each grid
+cell. Separate files for birds, mammals, and bats.
 <ul>
 <li>bird_cell_df.csv: File too large to push to GitHub.</li>
 <li><a href="Data/mamm_cell_df.csv">mamm_cell_df.csv</a></li>
 <li><a href="Data/bat_cell_df.csv">bat_cell_df.csv</a></li>
 </ul></li>
-<li>XXXX_SR_cells.csv: Species richness of each grid cell. Separate
-files for birds, mammals, and bats.
+<li><strong>XXXX_SR_cells.csv</strong>: Species richness of each grid
+cell. Separate files for birds, mammals, and bats.
 <ul>
 <li><a href="Data/bird_SR_cells.csv">bird_SR_cells.csv</a></li>
 <li><a href="Data/mamm_SR_cells.csv">mamm_SR_cells.csv</a></li>
 <li><a href="Data/bat_SR_cells.csv">bat_SR_cells.csv</a></li>
 </ul></li>
-<li>XXXX_PD_cells.csv: Phylogenetic diversity of each grid cell.
-Separate files for birds, mammals, and bats.
+<li><strong>XXXX_PD_cells.csv</strong>: Phylogenetic diversity of each
+grid cell. Separate files for birds, mammals, and bats.
 <ul>
 <li><a href="Data/bird_PD_cells.csv">bird_PD_cells.csv</a></li>
 <li><a href="Data/mamm_PD_cells.csv">mamm_PD_cells.csv</a></li>
 <li><a href="Data/bat_PD_cells.csv">bat_PD_cells.csv</a></li>
 </ul></li>
-<li>XXXX_FR_cells.csv: Functional richness of each grid cell. Separate
-files for birds, mammals, and bats.
+<li><strong>XXXX_FR_cells.csv</strong>: Functional richness of each grid
+cell. Separate files for birds, mammals, and bats.
 <ul>
 <li><a href="Data/bird_FR_cells.csv">bird_FR_cells.csv</a></li>
 <li><a href="Data/mamm_FR_cells.csv">mamm_FR_cells.csv</a></li>
 <li><a href="Data/bat_FR_cells.csv">bat_FR_cells.csv</a></li>
 </ul></li>
-<li>XXXX_mean_fb.csv: Mean functional beta diversity turnover of each
-grid cell. Separate files for birds, mammals, and bats.
+<li><strong>XXXX_mean_fb.csv</strong>: Mean functional beta diversity
+turnover of each grid cell. Separate files for birds, mammals, and bats.
 <ul>
 <li><a href="Data/bird_mean_fb.csv">bird_mean_fb.csv</a></li>
 <li><a href="Data/mamm_mean_fb.csv">mamm_mean_fb.csv</a></li>
 <li><a href="Data/bat_mean_fb.csv">bat_mean_fb.csv</a></li>
 </ul></li>
-<li>XXXX_pb_NMDS.csv: Phylobetadiversity turnover NMDS coordinates for 3
-axes for each grid cell. Separate files for birds, mammals, and bats.
+<li><strong>XXXX_pb_NMDS.csv</strong>: Phylobetadiversity turnover NMDS
+coordinates for 3 axes for each grid cell. Separate files for birds,
+mammals, and bats.
 <ul>
 <li><a href="Data/bird_pb_NMDS.csv">bird_pb_NMDS.csv</a></li>
 <li><a href="Data/mamm_pb_NMDS.csv">mamm_pb_NMDS.csv</a></li>
 <li><a href="Data/bat_pb_NMDS.csv">bat_pb_NMDS.csv</a></li>
 </ul></li>
-<li>XXXX_pb_dist.RDS: Distance matrix of phylobetadiversity turnover.
-Separate files for birds, mammals, and bats.
+<li><strong>XXXX_pb_dist.RDS</strong>: Distance matrix of
+phylobetadiversity turnover. Separate files for birds, mammals, and
+bats.
 <ul>
 <li><a href="Data/bird_pb_dist.RDS">bird_pb_dist.RDS</a></li>
 <li><a href="Data/mamm_pb_dist.RDS">mamm_pb_dist.RDS</a></li>
 <li><a href="Data/bat_pb_dist.RDS">bat_pb_dist.RDS</a></li>
 </ul></li>
-<li>XXXX_func_PCoA.RDS: Functional PCoA coordinates for each species.
-Separate files for birds, mammals, and bats.
+<li><strong>XXXX_func_PCoA.RDS</strong>: Functional PCoA coordinates for
+each species. Separate files for birds, mammals, and bats.
 <ul>
 <li><a href="Data/bird_func_PCoA.RDS">bird_func_PCoA.RDS</a></li>
 <li><a href="Data/mamm_func_PCoA.RDS">mamm_func_PCoA.RDS</a></li>
 <li><a href="Data/bat_func_PCoA.RDS">bat_func_PCoA.RDS</a></li>
 </ul></li>
-<li>XXXX_fb.RDS: Output from functional beta diversity calculation,
-including distance matrices for total beta diversity, turnover, and
-nestedness. Separate files for mammals and bats. Mammal file too large
-to push to GitHub.
+<li><strong>XXXX_fb.RDS</strong>: Output from functional beta diversity
+calculation, including distance matrices for total beta diversity,
+turnover, and nestedness. Separate files for mammals and bats.
 <ul>
-<li>mamm_fb.RDS</li>
+<li>mamm_fb.RDS: File too large to push to GitHub.</li>
 <li><a href="Data/bat_fb.RDS">bat_fb.RDS</a></li>
 </ul></li>
 </ol>
